@@ -1,0 +1,19 @@
+
+.head {
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#Logo {
+    border:3px white;
+    border-radius: 50px;
+    width: 50px;
+}
+
+a:hover {
+    color: rgb(255, 233, 133);
+}
+
+a:visited {
+    color: #5c2c1a;
+}
