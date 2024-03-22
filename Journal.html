@@ -1,0 +1,289 @@
+<html>
+    <head>
+        <title>My Journal Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+  
+    p{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color:maroon;
+        font-size:30px;
+        
+    }
+    .div1{
+        font-family: 'Times New Roman', Times, serif;
+        color:maroon;
+        font-size:40px;
+        margin-left: 5px;
+    }
+    .border1{
+        border:1px rgb(0, 0, 0);
+        border-radius: 5px;
+        margin-left: 60px;
+        margin-right: 10px;
+        margin-bottom: 80px;
+        background-image:url("whitepage1.jpg");
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-position: -55px;
+    
+
+    }
+    
+    .columns{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .b1{
+        border:1px,rgb(255, 255, 255);
+        border-radius: 5px;
+
+      }
+    .p1{
+        font-family:'French Script MT';
+        font-size: 48px;
+        color:black;
+        text-align:justify;
+       
+        
+    }
+      
+    .footer{
+        background-color: #edc090;
+        color: #5c2c1a;
+        text-align: center;
+        font-size: 55px;
+        font-family: 'French Script MT';
+    }
+    table{
+      
+        border-collapse: collapse;
+        border-width: 2px;
+        border-style: dashed;
+        border-color:#5c2c1a;
+        text-align: justify;
+        margin-left: 70px;
+        text-align:right;
+        
+        
+    }
+    td,th{
+        font-family:'French Script MT';
+        font-size: 20px;
+        margin: 2px 2px 2px 2px;
+        border-width: 1px;
+        border-collapse: collapse;
+        border-style: dashed;
+        border-color:#5c2c1a;
+        text-align: justify;
+        margin-left: 70px;
+        padding: 10px;
+    }
+   
+   
+    
+</style>
+
+    </head>
+    <body>
+    
+        <div class="container div1">
+           <img src="journalcover1.jpg" class="rounded" width="60px" height="90px" alt= "picture of a journal icon" style="float:left" ><p style="padding-left: 80px;"> My Journal</p>
+           <br/>
+           <hr style="color: black;"/>
+           <img src="whitetwopages.jpg" width="90px" class="b1" style="float:left"><br/>
+        </div>
+        
+        <!--This is a tab navigator for pages of a sample Journal-->
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pageOne">
+                   <p style="font-size: 20px;"> page1</p>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pageTwo"><p style="font-size: 20px;">page 2</p></a></li>
+            </ul>
+        </div>
+        <!--This is the tabs content -->
+        <div class="tab-content">
+            <div class="tab-pane container active" id="pageOne">
+                <p class="p1 border1">
+            
+                    This is the first page I am writing in my Journal! I am <br/>
+                    excited about this!I am considering this as a wonderful place  
+                    <br/> to keep precious memories, thoughts and feelings.
+                
+                </p>
+            </div>
+          
+        
+       
+            <div class="tab-pane container fade" id="PageTwo">
+                <p class="p1 border1">
+                    
+                    I met my freind today , we kept talking for hours about the 
+                    <br>new updates of our lives since last time we met.
+                    <br>It was a nurturing time!
+                   
+                </p>
+                
+            </div>
+            <br/>
+            <hr/>
+            <p style=" padding-left: 80px;"> Favourites:</p><br/>
+        </div>
+
+        <!--tabs for the favourite books / movies -->
+         
+        <div class="container div1">
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link" href="#books" data-bs-toggle="tab"><p style="padding-left: 80px; font-size: 20px;">Books</p></a></li>
+                <li class="nav-item"><a class="nav-link" href="#movies" data-bs-toggle="tab"><p style="padding-left: 80px; font-size: 20px;">Movies</p></a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <!--Books tab-->
+            <div class="tab-pane container active" id ="books">
+                <br/>
+                <img src="TheSecretHistory.jpg" width="130px" style="float: left; margin-right: 10px; margin-top: 5px;">
+                <p class="p1 border1">
+                    This is my favourite book up until now , It's a mestery <br/>
+                    novel where a group of elite students commit a murder.  <br/>
+                    I  realy love the dark academia theme of it . 
+                </p>
+            </div>
+             <!--Movies tab-->
+            <div class="tab-pane container fade" id ="movies">
+                <br/>
+                <img src="ThedeadPoetsSociety.jpg" width="135px" style="float: left; margin-right: 10px; margin-top: 5px;">
+                <p class="p1 border1">
+                    This movie is so close to my heart!The love of writing <br/>
+                     and reading & seeing that as a way of living! every<br/>
+                     little concept this movie is so precious to me<br/>
+                    
+                </p>
+            </div>
+
+        </div>
+
+
+
+         <div class="container"><br/><hr/><p style=" padding-left: 80px;"> Mood Tracker:</p><br/></div>
+        <!--tabs for the mood tracking and the report --> 
+        <div class="container div1">
+           <ul class="nav nav-tabs">
+               <li class="nav-item"><a class="nav-link" href="#table1" data-bs-toggle="tab"><p style="padding-left: 80px; font-size: 20px;">Week one</p></a></li>
+               <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#report"><p style="padding-left: 80px; font-size: 20px;">Report</p></a></li>
+            </ul>
+        </div>
+
+
+        <div class="tab-content">
+        <div class="tab-pane container active"id="table1" >
+            <br/>
+           <table>
+               <tr>
+                <th>Day </th>
+                <th>Happy </th>
+                <th>Calm </th>
+                <th>Angry </th>
+                <th>Productive </th>
+                <th>Sad </th>
+
+               </tr>
+              <tr>
+                <form action="">
+                <th>Sunday</th>
+                <td><input type="radio" name="mood" valu="Happy1" checked></td>
+                <td><input type="radio"name="mood" valu="Calm1"></td>
+                <td><input type="radio"name="mood" valu="Angry1"></td>
+                <td><input type="radio"name="mood" valu="Productive1"></td>
+                <td><input type="radio"name="mood" valu="Sad1"></td>
+                </form>
+              </tr>
+              <tr>
+                <form action="">
+                <th>Monday</th>
+                <td><input type="radio" name="mood" valu="Happy2"></td>
+                <td><input type="radio"name="mood" valu="Calm2"checked></td>
+                <td><input type="radio"name="mood" valu="Angry2"></td>
+                <td><input type="radio"name="mood" valu="Productive2"></td>
+                <td><input type="radio"name="mood" valu="Sad2"></td>
+            </form>
+              </tr>
+              <tr>
+                <form action="">
+                <th>Tuesday</th>
+                <td><input type="radio" name="mood" valu="Happy3"></td>
+                <td><input type="radio"name="mood" valu="Calm3"></td>
+                <td><input type="radio"name="mood" valu="Angry3"checked></td>
+                <td><input type="radio"name="mood" valu="Productive3"></td>
+                <td><input type="radio"name="mood" valu="Sad3"></td>
+            </form>
+              </tr>
+              <tr>
+                <form action="">
+                <th>Wednesday</th>
+                <td><input type="radio" name="mood" valu="Happy4"></td>
+                <td><input type="radio"name="mood" valu="Calm4"></td>
+                <td><input type="radio"name="mood" valu="Angry4"></td>
+                <td><input type="radio"name="mood" valu="Productive4"checked></td>
+                <td><input type="radio"name="mood" valu="Sad4"></td>
+            </form>
+              </tr>
+              <tr>
+                <form action="">
+                <th>Thursday</th>
+                <td><input type="radio" name="mood" valu="Happy5"></td>
+                <td><input type="radio"name="mood" valu="Calm5"></td>
+                <td><input type="radio"name="mood" valu="Angry5"></td>
+                <td><input type="radio"name="mood" valu="Productive5"></td>
+                <td><input type="radio"name="mood" valu="Sad5"checked></td>
+            </form>
+              </tr>
+              <tr>
+                <form action="">
+                <th>Friday</th>
+                <td><input type="radio" name="mood" valu="Happy6"checked></td>
+                <td><input type="radio"name="mood" valu="Calm6"></td>
+                <td><input type="radio"name="mood" valu="Angry6"></td>
+                <td><input type="radio"name="mood" valu="Productive6"></td>
+                <td><input type="radio"name="mood" valu="Sad6"></td>
+            </form>
+              </tr>
+              <tr>
+                <form action="">
+                <th>Saturday</th>
+                <td><input type="radio" name="mood" valu="Happy7"></td>
+                <td><input type="radio"name="mood" valu="Calm7"checked></td>
+                <td><input type="radio"name="mood" valu="Angry7"></td>
+                <td><input type="radio"name="mood" valu="Productive7"></td>
+                <td><input type="radio"name="mood" valu="Sad7"></td>
+            </form>
+              </tr>
+
+        </table>
+       </div>
+       <div class="tab-pane container fade"id="report" >
+        <div class="border1">
+            <br/>
+        <p  style="font-size: 48px; padding-top: 3px;"class="p1">
+            
+            This week's , I have been strugeling with my mood swings, <br/>
+            and overall, I had throygh the reasons wich are:
+                 <ol>
+                    <li><p style="font-size: 48px;padding-top: 3px;"class="p1">Overload of academic work</p></li>
+                    <li><p style="font-size: 48px;padding-top: 3px;"class="p1">Lack of slaap</p></li>
+                 </ol> 
+                </p>
+        <p style="font-size: 48px;padding-top: 3px;" class="p1">
+            I will do better next week insha'allah by sleeping well<br/>
+            and avoiding procrastination<br/></p>
+        </div>
+       </div>
+        <hr/>
+        <br/>
+    </div>
+    
+         
+    </body>
+</html>
