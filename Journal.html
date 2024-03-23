@@ -45,7 +45,7 @@
         
     }
 
-    table{
+    table.table1{
       
         border-collapse: collapse;
         border-width: 2px;
@@ -70,7 +70,9 @@
         padding: 10px;
     }
    
-   
+   a:hover{color:burlywood}
+   a:visited{color:#5c2c1a}
+   a:active{color: brown;}
     
 </style>
 
@@ -170,7 +172,7 @@
         <div class="tab-content">
         <div class="tab-pane container active"id="table1" >
             <br/>
-           <table>
+           <table class="table1">
                <tr>
                 <th>Day </th>
                 <th>Happy </th>
@@ -182,7 +184,7 @@
                </tr>
               <tr>
                 <form action="">
-                <th>Sunday</th>
+                <th>Sun</th>
                 <td><input type="radio" name="mood" valu="Happy1" checked></td>
                 <td><input type="radio"name="mood" valu="Calm1"></td>
                 <td><input type="radio"name="mood" valu="Angry1"></td>
@@ -192,7 +194,7 @@
               </tr>
               <tr>
                 <form action="">
-                <th>Monday</th>
+                <th>Mon</th>
                 <td><input type="radio" name="mood" valu="Happy2"></td>
                 <td><input type="radio"name="mood" valu="Calm2"checked></td>
                 <td><input type="radio"name="mood" valu="Angry2"></td>
@@ -202,7 +204,7 @@
               </tr>
               <tr>
                 <form action="">
-                <th>Tuesday</th>
+                <th>Tue</th>
                 <td><input type="radio" name="mood" valu="Happy3"></td>
                 <td><input type="radio"name="mood" valu="Calm3"></td>
                 <td><input type="radio"name="mood" valu="Angry3"checked></td>
@@ -212,7 +214,7 @@
               </tr>
               <tr>
                 <form action="">
-                <th>Wednesday</th>
+                <th>Wed</th>
                 <td><input type="radio" name="mood" valu="Happy4"></td>
                 <td><input type="radio"name="mood" valu="Calm4"></td>
                 <td><input type="radio"name="mood" valu="Angry4"></td>
@@ -222,7 +224,7 @@
               </tr>
               <tr>
                 <form action="">
-                <th>Thursday</th>
+                <th>Thu</th>
                 <td><input type="radio" name="mood" valu="Happy5"></td>
                 <td><input type="radio"name="mood" valu="Calm5"></td>
                 <td><input type="radio"name="mood" valu="Angry5"></td>
@@ -232,7 +234,7 @@
               </tr>
               <tr>
                 <form action="">
-                <th>Friday</th>
+                <th>Fri</th>
                 <td><input type="radio" name="mood" valu="Happy6"checked></td>
                 <td><input type="radio"name="mood" valu="Calm6"></td>
                 <td><input type="radio"name="mood" valu="Angry6"></td>
@@ -242,7 +244,7 @@
               </tr>
               <tr>
                 <form action="">
-                <th>Saturday</th>
+                <th>Sat</th>
                 <td><input type="radio" name="mood" valu="Happy7"></td>
                 <td><input type="radio"name="mood" valu="Calm7"checked></td>
                 <td><input type="radio"name="mood" valu="Angry7"></td>
@@ -270,10 +272,73 @@
             and avoiding procrastination<br/></p>
         </div>
        </div>
-        <hr/>
         <br/>
     </div>
-    <button type="button" class="btn btn-light"><a href="Journaling.html" style="margin-left:20px;"><p style="font-size:50px;">Back</p></a></button>
+
+    <div class="container"><br/><hr/><p style=" padding-left: 80px;"> Habits Tracker:</p><br/></div>
+    <!--tabs for the habits tracker and the report --> 
+    <div class="container div1">
+       <ul class="nav nav-tabs">
+           <li class="nav-item"><a class="nav-link" href="#table2" data-bs-toggle="tab"><p style="padding-left: 80px; font-size: 20px;">Week one</p></a></li>
+           <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#report2"><p style="padding-left: 80px; font-size: 20px;">Report</p></a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane container active"id="table2" >
+            <br/>
+            <table class="table table-hover">
+                <tr>
+                    <th colspan="2">Habit</th>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                <form action="">
+                    <th rowspan="2">Deen</th>
+                    <th>Read Qura'n</th>
+                    <td><input type="checkbox" name="mood" valu="qur1"></td>
+                    <td><input type="checkbox" name="mood" valu="qur2"></td>
+                    <td><input type="checkbox" name="mood" valu="qur3"checked></td>
+                    <td><input type="checkbox" name="mood" valu="qur4"></td>
+                    <td><input type="checkbox" name="mood" valu="qur5"checked></td>
+                    <td><input type="checkbox" name="mood" valu="qur6"></td>
+                    <td><input type="checkbox" name="mood" valu="qur7"></td>
+                </form>
+                </tr>
+                <tr>
+                <form action="">
+                    <th>Prayers on time</th>
+                    <td><input type="checkbox" name="mood" valu="pra1" checked></td>
+                    <td><input type="checkbox" name="mood" valu="pra2"></td>
+                    <td><input type="checkbox" name="mood" valu="pra3"checked></td>
+                    <td><input type="checkbox" name="mood" valu="pra4"></td>
+                    <td><input type="checkbox" name="mood" valu="pra5"checked></td>
+                    <td><input type="checkbox" name="mood" valu="pra6"></td>
+                    <td><input type="checkbox" name="mood" valu="pra7"></td>
+                </form>
+                </tr>
+
+            </table>
+        </div>
+        <div class="tab-pane container fade" id="report2">
+            <div class="container mt-3">
+                <p>This is the progress bars representation of the habits:</p> 
+                <p>Reading Qura'n</p>
+                <div class="progress">
+                  <div class="progress-bar bg-dark" style="width:28.5%"></div> </div><br>
+                  <p>Praying on time</p>
+                  <div class="progress">
+                  <div class="progress-bar bg-danger" style="width:42.8%"></div>
+                  </div><br></div>
+              
+        </div>
+    </div>
+    <button type="button" class="btn btn-light"style="margin-left:60px; width:100px; height:100px;"><a href="Journaling.html"><p style="font-size: 20px;">Back</p></a></button>
 
          
     </body>
