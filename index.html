@@ -57,29 +57,28 @@
       100% { transform: translateX(-100%); } /* Move to left and loop */
     }
 
-   /* Photo gallery styling */
-   .photo-gallery {
-      display: flex;
-      overflow: hidden; /* Hide overflow when images rotate */
-      margin-top: 30px;
-    }
+    #photo-gallery {
+  width: 600px; /* Adjust width as needed */
+  height: 400px; /* Adjust height as needed */
+  margin: 0 auto; /* Center the gallery horizontally */
+  overflow: hidden; /* Hide overflowing parts of images */
+  position: relative;
+ text-align: center;
+ border:white;
+  margin-left: 200px;
+}
 
-    .photo-gallery img {
-      width: 300px; /* Adjust image width if needed */
-      height: auto; /* Maintain aspect ratio */
-      transition: opacity 3s ease-in-out; /* Smooth transition between images */
-    }
+#photo-gallery img {
+  width: 100%; /* Images take full width of the gallery */
+  height: 100%; /* Images take full height of the gallery */
+  object-fit: cover; /* Scale images to fit while maintaining aspect ratio */
+  opacity: 0; /* Initially hide all images */
+  transition: opacity 1s ease-in-out; /* Smooth transition effect */
+}
 
-    .photo-gallery img:first-child {
-      animation: rotate 10s infinite linear; /* Set rotation animation */
-    }
-
-    @keyframes rotate {
-      0% { opacity: 1; }
-      33% { opacity: 0; } /* Hide current image for 1/3 of the duration */
-      66% { opacity: 0; } /* Hide previous image for 1/3 of the duration */
-      100% { opacity: 1; } /* Show next image for 1/3 of the duration */
-    }
+#photo-gallery img:first-child {
+  opacity: 1; /* Show the first image initially */
+}
 
 </style>
 <!--Importing the external css sheet to style the navigation bar and logo-->
