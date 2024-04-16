@@ -37,7 +37,51 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
+      h2 {
+      margin-bottom: 20px;
+      color: #4a4646;
+    }
+    .header {
+      padding: 30px;
+      margin: 0 auto; /* Center content horizontally */
+      max-width: 700px;
+    }
+    .welcome-banner {
+      position: fixed; /* Fix banner at the bottom */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #e5e5e5;
+      color: #444;
+      text-align: center;
+      font-size: 14px;
+      animation: marquee 15s linear infinite; /* Set animation for scrolling text */
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(100%); } /* Start from right */
+      100% { transform: translateX(-100%); } /* Move to left and loop */
+    }
 
+    .photo-gallery {
+      display: flex;
+      overflow: hidden; /* Hide overflow when images rotate */
+    }
+
+    .photo-gallery img {
+      width: 100%; /* Ensure images fill container width */
+      height: auto; /* Maintain aspect ratio */
+      transition: transform 3s ease-in-out; /* Smooth transition between images */
+    }
+
+    .photo-gallery img:first-child {
+      animation: rotate 10s infinite linear; /* Set rotation animation */
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); } /* Rotate 360 degrees */
+    }
 
 </style>
 <!--Importing the external css sheet to style the navigation bar and logo-->
@@ -56,7 +100,12 @@
             <li class="nav-item"><a href="Payment.html" class="nav-link"><p>Payment</p></a></li>
             <li class="nav-item"><a href="about As.html" class="nav-link"><p>About us</p></a></li>
             <li class="nav-item"><a href="Contact us.html" class="nav-link"><p>Contact us</p></a></li>
-            </ul>
+            <li class="nav-item"><a href="Calculation.html" class="nav-link"><p>Calculation</p></a></li>
+            <li class="nav-item"><a href="Fun.html" class="nav-link"><p>Fun</p></a></li>
+            <li class="nav-item"><a href="questionnaire.html" class="nav-link"><p>Questionnaire</p></a></li>
+
+
+        </ul>
     </nav>
 </div>
     </head>
@@ -72,15 +121,21 @@
             <hr>
         </div>
         
-        <div class="container div1">
-        <img src="capture.jpg" width="300"class="rounded-circle"><img src="record (1).jpg" width="300"class="rounded-circle">
+       <div class="header">
+  <h2>Welcome to [Company Name]!</h2>
+  </div>
+        <div class="photo-gallery">
+        <img src="capture.jpg" width="300"class="rounded-circle">
+        <img src="record (1).jpg" width="300"class="rounded-circle">
         <img src="express.jpg" width="300" class="rounded-circle" >
     </div>
     <br>    
     <div class="footer">
         where words flow freely and thoughts find their home
     </div>
-
+    <div class="welcome-banner">
+        Welcome to the Our Journaling website <script>document.write(new Date().toLocaleDateString())</script>, and the time is <script>document.write(new Date().toLocaleTimeString())</script>.
+      </div>
   
     </body>
 </html>
