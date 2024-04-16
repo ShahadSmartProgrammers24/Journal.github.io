@@ -21,9 +21,7 @@
     div.div1{
         border:white; margin-left: 200px;
     }
-    #image{
-        opacity:0.5;
-    }
+   
     .container1 {
         position: relative;
         text-align: center;
@@ -64,12 +62,14 @@
     }
 
     .photo-gallery {
+        
       display: flex;
       overflow: hidden; /* Hide overflow when images rotate */
     }
 
     .photo-gallery img {
-      width:; /* Ensure images fill container width */
+        width:100px
+      opacity:0.5;; /* Ensure images fill container width */
       height: auto; /* Maintain aspect ratio */
       transition: transform 3s ease-in-out; /* Smooth transition between images */
     }
@@ -77,8 +77,18 @@
     .photo-gallery img:first-child {
       animation: rotate 10s infinite linear; /* Set rotation animation */
     }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); } /* Rotate 360 degrees */
+    }
     .photo-gallery img:second-child {
       animation: rotate 10s infinite linear; /* Set rotation animation */
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); } /* Rotate 360 degrees */
     }
      .photo-gallery img:third-child {
       animation: rotate 10s infinite linear; /* Set rotation animation */
