@@ -140,6 +140,27 @@
             document.write(new Date().toLocaleDateString())</script>
         <script>document.write(new Date().toLocaleTimeString())</script>.
       </div>
-  
+  <script>
+  // Target the first image
+  const firstImage = document.querySelector('.photo-gallery img:first-child');
+
+  // Define the animation keyframes
+  const rotateAnimation = {
+    from: { transform: 'rotate(0deg)' },
+    to: { transform: 'rotate(360deg)' }
+  };
+
+  // Create the animation object
+  const rotation = new CSSKeyframeAnimation(rotateAnimation, {
+    duration: 10000, // Animation duration in milliseconds (10 seconds)
+    iterations: Infinity, // Repeat indefinitely
+    easing: 'linear' // Smooth transition
+  });
+
+  // Apply the animation to the first image
+  firstImage.animate(rotation, {
+    fill: 'forwards' // Maintain animation state after it ends
+  });
+</script>
     </body>
 </html>
