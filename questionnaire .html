@@ -1,0 +1,100 @@
+
+<html>
+<head>
+    <title>Questionnaire Form</title>
+    <style>
+        body{background-color: rgb(238, 205, 170);}
+        .question-background {
+            background-color: #92450f; /* background color */
+            color: white; /*  text color */
+            text-align: center;
+            padding: 150px; 
+            font-size: 100px; /* text size  */
+        }
+    </style>
+</head>
+<body>
+    <div class="question-background">
+        Questionnaire
+    </div>
+    <h1 style="color:red">Feedback form</h1>
+    <hr/>
+    <h2>
+        <form id="questionForm" onsubmit="return validateForm()">
+            <label for="gender">What's your gender</label><br>
+            <input type="text" id="gender" name="gender" required><br><br>
+            
+            <label for="age">How old are you?</label><br>
+            <input type="number" id="age" name="age" required><br><br>
+            
+            <label for="interest">What is the topic you're interested in?</label><br>
+            <input type="text" id="interest" name="interest" required><br><br> 
+
+            <p>Do you think colors and images in our website are eye-friendly?</p>
+            <input type="radio" id="colors-yes" name="colors" value="yes" required>
+            <label for="colors-yes">Yes</label>
+            <input type="radio" id="colors-no" name="colors" value="no">
+            <label for="colors-no">No</label><br><br>
+            
+            <p>Do you think our website makes people talented?</p>
+            <input type="radio" id="talents-yes" name="talents" value="yes" required>
+            <label for="talents-yes">Yes</label>
+            <input type="radio" id="talents-no" name="talents" value="no">
+            <label for="talents-no">No</label><br><br>
+            
+            <p>Do you think this website is a hub for talented individuals, writers, and art enthusiasts?</p>
+            <input type="radio" id="hub-yes" name="hub" value="yes" required>
+            <label for="hub-yes">Yes</label>
+            <input type="radio" id="hub-no" name="hub" value="no">
+            <label for="hub-no">No</label><br><br>
+            
+            <label for="feedback-type">What is the type of your feedback?</label><br>
+            <input type="checkbox" id="technical" name="feedback-type" value="Technical">
+            <label for="technical">Technical</label><br>
+            
+            <input type="checkbox" id="financial" name="feedback-type" value="Financial">
+            <label for="financial">Financial</label><br>
+            
+            <input type="checkbox" id="structure" name="feedback-type" value="Structure">
+            <label for="structure">Structure</label><br><br>
+            
+            <label for="feedback">Write your feedback here:</label><br>
+            <textarea id="feedback" name="feedback" rows="10" cols="50" required></textarea><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </h2>
+    <hr/>
+
+
+   <script>
+    // function for check value 
+    function validateForm() {
+        // Create Variable for Age
+        var ageInput = document.getElementById("age").value;
+        // check if agg is less than 6
+        if (ageInput < 6) {
+            // less than 6 return False 
+            alert("Your age must be 6 years or older.");
+            return false;
+        }
+        // Create Variable for gender
+        var gender = document.getElementById("gender").value.toLowerCase();
+        // gender value must be male or female
+        if (gender !== "male" && gender !== "female") {
+            alert("Please enter 'male' or 'female' for gender.");
+            return false;
+        }
+         // Create Variable for Age , interest and feedback
+        var age = document.getElementById("age").value;
+        var interest = document.getElementById("interest").value;
+        var feedback = document.getElementById("feedback").value;
+        // check if the user answer all qustion om the bage 
+        if (age === "" || interest === "" || feedback === "") {
+            alert("Please fill out all the fields.");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
