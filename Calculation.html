@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Journaling Subscription Calculator</title>
+    <style>
+         /* Global styles */
+        body {
+            font-family: 'French Script MT'; /* Set font family */
+            background-color:  #5c2c1abc; /* Set background color */
+            font-size:20px ; /* Set font size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        
+        .container {
+            background-color: #f8d1c3cc;/* Set background color */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            height: 350px;
+            text-align: center;
+        }
+     
+          /* Header styles */
+        h2 {
+            margin-bottom: 20px;
+            color: #4a4646; /* Set text color */
+           
+        }
+        
+
+         /* Form styles */
+        form {
+            text-align: left;
+        }
+     
+        select, input[type="checkbox"] {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid  #5c2c1a;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .checkbox-wrapper{
+            display:inline-block;
+
+        }
+
+        
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #5c2c1abc;/* Set background color */
+            color:aliceblue;/* Set text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="button"]:hover {
+            background-color: #e5cba9;/* Change background color on hover */
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+      <!-- Heading -->
+    <h2 style="font-size: 45px;">Journaling Subscription Calculator</h2>
+     <!-- Subscription form -->
+    <form>
+        <!-- Subscription label and dropdown -->
+        <label for="subscription" style="font-family:'Times New Roman', Times, serif ;">Select subscription:</label>
+        <select id="subscription" style="font-family:'Times New Roman', Times, serif ;">
+            <option value="1 month">1 month - 3 OMR</option>
+            <option value="3 months">3 months - 6 OMR</option>
+            <option value="1 year">1 year - 25 OMR</option>
+        </select>
+
+        <!-- Checkbox wrapper -->
+        <div class="checkbox-wrapper" style="font-family:'Times New Roman', Times, serif ;">
+        <lable for="writer">
+          Are you a writer or author?</lable>
+          <input type="checkbox" id="writer"name="writer or author?">
+        </div>
+
+    <!-- Calculate Total button -->
+        <input style="font-family:'Times New Roman', Times, serif ;" type="button" value="Calculate Total" onclick="onSubmit()">
+    </form>
+     <!-- Total cost display -->
+    <div id="totalCostDisplay"style="display: none;font-family:'Times New Roman', Times, serif ;">
+     Total Cost : <span id="totalCost"></span>OMR</div>
+     </div>
+
+<!-- JavaScript code -->
+<script>
+     // Function to calculate total cost
+    function calculateTotal(subscriptionType, isWriter) {
+        var basePrice = 0;
+        var discount = 0;
+        var totalPrice = 0;
+        
+          // Determine base price based on subscription type
+        switch (subscriptionType) {
+            case "3 months":
+                basePrice = 6;
+                break;
+            case "1 month":
+                basePrice = 3;
+                break;
+            case "1 year":
+                basePrice = 25;
+                break;
+            default:
+                basePrice = 0;
+                break;
+        }
+        // Apply discount for writers/authors
+        if (isWriter) {
+            discount = basePrice * 0.2;
+        }
+         // Calculate total price
+        totalPrice = basePrice - discount;
+
+        return totalPrice;
+    }
+    
+    // Function to handle form submission
+    function onSubmit() {
+        var subscriptionType = document.getElementById("subscription").value;
+        var isWriter = document.getElementById("writer").checked;
+        var totalCost = calculateTotal(subscriptionType, isWriter);
+         // Display total cost
+        document.getElementById("totalCost").innerText=totalCost;
+        document.getElementById("totalCostDisplay").style.display="block";
+        // Redirect to payment page after a delay
+        setTimeout(function(){
+        window.location.href = "Payment.html?totalCost=" + totalCost;},2000)// Delay in milliseconds (2 seconds)
+    }
+</script>
+
+</body>
+</html>
