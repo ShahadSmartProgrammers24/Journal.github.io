@@ -56,27 +56,26 @@
       0% { transform: translateX(100%); } /* Start from right */
       100% { transform: translateX(-100%); } /* Move to left and loop */
     }
-    .gallery {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
+    
+    .photo-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 20px;
+        }
 
-.gallery-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
+        .photo-gallery img {
+            width: 300px; /* Adjust according to your preference */
+            height: 200px; /* Adjust according to your preference */
+            margin: 0 10px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-.show {
-  opacity: 1;
-}
+        .photo-gallery img.active {
+            opacity: 1;
+        }
 
 </style>
 <!--Importing the external css sheet to style the navigation bar and logo-->
@@ -119,11 +118,12 @@
   
      
         
-        <div class="gallery">
-            <img src="capture.jpg" alt="Image 1">
-            <img src="record (1).jpg" alt="Image 2">
-            <img src="express.jpg" alt="Image 3">
-          </div>
+       
+    <div class="photo-gallery">
+      <img src="capture.jpg" alt="Image 1" class="active">
+      <img src="record (1).jpg" alt="Image 2">
+      <img src="express.jpg" alt="Image 3">
+  </div>
     
     <br>    
     <div class="footer">
@@ -136,23 +136,19 @@
         <script>document.write(new Date().toLocaleTimeString())</script>.
     </h1> 
       </div>
-      <script>document.addEventListener("DOMContentLoaded", function() {
-        const images = document.querySelectorAll('.gallery-img');
-        let index = 0;
       
-        function showImage(index) {
-          images.forEach(img => img.classList.remove('show'));
-          images[index].classList.add('show');
-        }
-      
-        function nextImage() {
+    <script>
+      // JavaScript for rotating images in the gallery
+      const images = document.querySelectorAll('.photo-gallery img');
+      let index = 0;
+
+      setInterval(() => {
+          images[index].classList.remove('active');
           index = (index + 1) % images.length;
-          showImage(index);
-        }
+          images[index].classList.add('active');
+      }, 3000); // Change the time (in milliseconds) as needed
+  </script>
       
-        setInterval(nextImage, 3000); // Change image every 3 seconds
-        showImage(index); // Show the first image initially
-      });</script>
   
     </body>
 </html>
