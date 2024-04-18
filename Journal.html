@@ -76,6 +76,125 @@
     
 </style>
 
+<script>
+    /*this function constructing objects that store the fictions' books information*/
+    function fictionBook(name ,  genre, author){
+        this.name = name;
+        this.genre = genre;
+        this.author = author;
+    }
+    /*this function constructing objects that store the non fictions' books information*/    
+    function nonFictionBook(name ,  genre, author){
+        this.name = name;
+        this.genre = genre;
+        this.author = author;
+    }
+    /*an array store multiple objects of type fictionBook*/
+    var fictionBooks1  = [
+           new fictionBook('Pride and Prejudice','Romance','Jean Austin'),
+           new fictionBook('The Secret History','Mystery','Donna Tartt')
+    ];
+    /*an array store multiple objects of type nonFictionBook*/
+    var nonFictionBooks1  = [
+           {name:'Maybe you should talk to someone',genre:'Mental health',author:'Lori Gottlieb'},
+           {name:'The 5 am Club',genre:'Self-improvement',author:'Robin Sharma'}
+    ];
+    /*function to create a table from the array fictionBooks1 */
+    function createTableOfFiction(fictionBooks){
+        var header1 = document.getElementById('header1');
+        var header2 = document.getElementById('header2');
+        var header3 = document.getElementById('header3');
+        var row1cell1 = document.getElementById('first row first cell');
+        var row1cell2 = document.getElementById('first row second cell');
+        var row1cell3 = document.getElementById('first row third cell');
+        var row2cell1 = document.getElementById('second row first cell');
+        var row2cell2 = document.getElementById('second row second cell');
+        var row2cell3 = document.getElementById('second row third cell');
+        header1.innerHTML='Book'; header2.innerHTML='Genre'; header3.innerHTML='Author';
+        row1cell1.innerHTML = fictionBooks[0].name;
+        row1cell2.innerHTML = fictionBooks[0].genre;
+        row1cell3.innerHTML = fictionBooks[0].author;
+        row2cell1.innerHTML = fictionBooks[1].name;
+        row2cell2.innerHTML = fictionBooks[1].genre;
+        row2cell3.innerHTML = fictionBooks[1].author;
+    }
+// making sure the functions are executed automatically 
+window.onload = function() {
+    createTableOfFiction(fictionBooks1)
+    createTableOfNonFiction(nonFictionBooks1);
+};
+/*function to create a table from the array nonFictionBooks1 */
+    function createTableOfNonFiction(nonFictionBooks){
+        var header1 = document.getElementById('Header1');
+        var header2 = document.getElementById('Header2');
+        var header3 = document.getElementById('Header3');
+        var row1cell1 = document.getElementById('First row first cell');
+        var row1cell2 = document.getElementById('First row second cell');
+        var row1cell3 = document.getElementById('First row third cell');
+        var row2cell1 = document.getElementById('Second row first cell');
+        var row2cell2 = document.getElementById('Second row second cell');
+        var row2cell3 = document.getElementById('Second row third cell');
+        header1.innerHTML='Book'; header2.innerHTML='Genre'; header3.innerHTML='Author';
+        row1cell1.innerHTML = nonFictionBooks[0].name;
+        row1cell2.innerHTML = nonFictionBooks[0].genre;
+        row1cell3.innerHTML = nonFictionBooks[0].author;
+        row2cell1.innerHTML = nonFictionBooks[1].name;
+        row2cell2.innerHTML = nonFictionBooks[1].genre;
+        row2cell3.innerHTML = nonFictionBooks[1].author;
+    }
+/*function that takes the data from the form and checks if it exists in one of the arrays*/
+    function search(){
+        // flag to set the found to true if the element in the array 
+        var found= false;
+        var s = document.getElementById('searchengine');
+        var searchText = s.value;
+        // checking if the text in the search engine is in the array fictionBooks1
+        for(var i = 0 ;i< fictionBooks1.length ; i++){
+            if(searchText==fictionBooks1[i].name){
+                alert('Book name : '+fictionBooks1[i].name +' exists in fiction books array.' );
+                found= true;
+            }
+            else if(searchText==fictionBooks1[i].genre){
+                alert('Book genre : '+fictionBooks1[i].genre +' exists in fiction books array.' );
+                found= true;
+            }
+            else if(searchText==fictionBooks1[i].author){
+                alert('Book author : '+fictionBooks1[i].author +' exists in fiction books array.' );
+                found= true;
+            }
+           
+          }
+          
+        // checking if the text in the search engine is in the array nonFictionBooks1
+        for(var i = 0 ;i< nonFictionBooks1.length ; i++){
+            if(searchText==nonFictionBooks1[i].name){
+                alert('Book name : '+nonFictionBooks1[i].name +' exists in non fiction books array.' );
+                found= true;
+            }
+            else if(searchText==nonFictionBooks1[i].genre){
+                alert('Book genre : '+nonFictionBooks1[i].genre +' exists in  non fiction books array.' );
+                found= true;
+            }
+            else if(searchText==nonFictionBooks1[i].author){
+                alert('Book author : '+nonFictionBooks1[i].author +' exists in non fiction books array.' );
+                found= true;
+                
+            }
+   
+            
+           }
+           if(!(found==true)){
+            alert('The data does not exist .');
+           }
+
+        
+    }
+
+    
+    
+    
+</script>
+
     </head>
     <body>
     
@@ -150,16 +269,68 @@
                 <p class="p1 border1">
                     This movie is so close to my heart!The love of writing <br/>
                      and reading & seeing that as a way of living! every<br/>
-                     little concept this movie is so precious to me<br/>
+                     little concept of this movie is so precious to me<br/>
                     
                 </p>
             </div>
 
         </div>
+        
+        <div class="container"><br/><hr/><p style=" padding-left: 80px;"> Book Readings:</p><br/></div>
+        <div class="container div1">
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link" href="#readFiction" data-bs-toggle="tab"><p style="padding-left: 80px; font-size: 20px;">Fiction</p></a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#readnonFiction"><p style="padding-left: 80px; font-size: 20px;">non-Fiction</p></a></li>
+             </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane container active"id="readFiction" >
+                <br/>
+                <table class="table1">
+                     <tr>
+                        <th>Book</th>
+                        <th>Genre</th>
+                        <th>Author</th>
+                     </tr>
+                     <tr>
+                        <td>Pride and Prejudice</td>
+                        <td>Romance</td>
+                        <td>Jean Austin</td>
+                     </tr>
+                     <tr>
+                        <td>The Secret History</td>
+                        <td>Mystery</td>
+                        <td>Donna Tartt</td>
+                     </tr>
+                </table>
 
+            </div>
 
+            <div class="tab-pane container fade"id="readnonFiction" >
+                <br/>
+                <table class="table1">
+                     <tr>
+                        <th>Book</th>
+                        <th>Genre</th>
+                        <th>Author</th>
+                     </tr>
+                     <tr>
+                        <td>Maybe you should talk to someone</td>
+                        <td>Mental health</td>
+                        <td>Lori Gottlieb</td>
+                     </tr>
+                     <tr>
+                        <td>The 5 am Club</td>
+                        <td>Mental health</td>
+                        <td>Robin Sharma</td>
+                     </tr>
+                </table>
 
-         <div class="container"><br/><hr/><p style=" padding-left: 80px;"> Mood Tracker:</p><br/></div>
+            </div>
+
+        </div>
+
+        <div class="container"><br/><hr/><p style=" padding-left: 80px;"> Mood Tracker:</p><br/></div>
         <!--tabs for the mood tracking and the report --> 
         <div class="container div1">
            <ul class="nav nav-tabs">
@@ -185,71 +356,71 @@
               <tr>
                 <form action="">
                 <th>Sun</th>
-                <td><input type="radio" name="mood" valu="Happy1" checked></td>
-                <td><input type="radio"name="mood" valu="Calm1"></td>
-                <td><input type="radio"name="mood" valu="Angry1"></td>
-                <td><input type="radio"name="mood" valu="Productive1"></td>
-                <td><input type="radio"name="mood" valu="Sad1"></td>
+                <td><input type="radio" name="mood" value="Happy1" checked></td>
+                <td><input type="radio"name="mood" value="Calm1"></td>
+                <td><input type="radio"name="mood" value="Angry1"></td>
+                <td><input type="radio"name="mood" value="Productive1"></td>
+                <td><input type="radio"name="mood" value="Sad1"></td>
                 </form>
               </tr>
               <tr>
                 <form action="">
                 <th>Mon</th>
-                <td><input type="radio" name="mood" valu="Happy2"></td>
-                <td><input type="radio"name="mood" valu="Calm2"checked></td>
-                <td><input type="radio"name="mood" valu="Angry2"></td>
-                <td><input type="radio"name="mood" valu="Productive2"></td>
-                <td><input type="radio"name="mood" valu="Sad2"></td>
+                <td><input type="radio" name="mood" value="Happy2"></td>
+                <td><input type="radio"name="mood" value="Calm2"checked></td>
+                <td><input type="radio"name="mood" value="Angry2"></td>
+                <td><input type="radio"name="mood" value="Productive2"></td>
+                <td><input type="radio"name="mood" value="Sad2"></td>
             </form>
               </tr>
               <tr>
                 <form action="">
                 <th>Tue</th>
-                <td><input type="radio" name="mood" valu="Happy3"></td>
-                <td><input type="radio"name="mood" valu="Calm3"></td>
-                <td><input type="radio"name="mood" valu="Angry3"checked></td>
-                <td><input type="radio"name="mood" valu="Productive3"></td>
-                <td><input type="radio"name="mood" valu="Sad3"></td>
+                <td><input type="radio" name="mood" value="Happy3"></td>
+                <td><input type="radio"name="mood" value="Calm3"></td>
+                <td><input type="radio"name="mood" value="Angry3"checked></td>
+                <td><input type="radio"name="mood" value="Productive3"></td>
+                <td><input type="radio"name="mood" value="Sad3"></td>
             </form>
               </tr>
               <tr>
                 <form action="">
                 <th>Wed</th>
-                <td><input type="radio" name="mood" valu="Happy4"></td>
-                <td><input type="radio"name="mood" valu="Calm4"></td>
-                <td><input type="radio"name="mood" valu="Angry4"></td>
-                <td><input type="radio"name="mood" valu="Productive4"checked></td>
-                <td><input type="radio"name="mood" valu="Sad4"></td>
+                <td><input type="radio" name="mood" value="Happy4"></td>
+                <td><input type="radio"name="mood" value="Calm4"></td>
+                <td><input type="radio"name="mood" value="Angry4"></td>
+                <td><input type="radio"name="mood" value="Productive4"checked></td>
+                <td><input type="radio"name="mood" value="Sad4"></td>
             </form>
               </tr>
               <tr>
                 <form action="">
                 <th>Thu</th>
-                <td><input type="radio" name="mood" valu="Happy5"></td>
-                <td><input type="radio"name="mood" valu="Calm5"></td>
-                <td><input type="radio"name="mood" valu="Angry5"></td>
-                <td><input type="radio"name="mood" valu="Productive5"></td>
-                <td><input type="radio"name="mood" valu="Sad5"checked></td>
+                <td><input type="radio" name="mood" value="Happy5"></td>
+                <td><input type="radio"name="mood" value="Calm5"></td>
+                <td><input type="radio"name="mood" value="Angry5"></td>
+                <td><input type="radio"name="mood" value="Productive5"></td>
+                <td><input type="radio"name="mood" value="Sad5"checked></td>
             </form>
               </tr>
               <tr>
                 <form action="">
                 <th>Fri</th>
-                <td><input type="radio" name="mood" valu="Happy6"checked></td>
-                <td><input type="radio"name="mood" valu="Calm6"></td>
-                <td><input type="radio"name="mood" valu="Angry6"></td>
-                <td><input type="radio"name="mood" valu="Productive6"></td>
-                <td><input type="radio"name="mood" valu="Sad6"></td>
+                <td><input type="radio" name="mood" value="Happy6"checked></td>
+                <td><input type="radio"name="mood" value="Calm6"></td>
+                <td><input type="radio"name="mood" value="Angry6"></td>
+                <td><input type="radio"name="mood" value="Productive6"></td>
+                <td><input type="radio"name="mood" value="Sad6"></td>
             </form>
               </tr>
               <tr>
                 <form action="">
                 <th>Sat</th>
-                <td><input type="radio" name="mood" valu="Happy7"></td>
-                <td><input type="radio"name="mood" valu="Calm7"checked></td>
-                <td><input type="radio"name="mood" valu="Angry7"></td>
-                <td><input type="radio"name="mood" valu="Productive7"></td>
-                <td><input type="radio"name="mood" valu="Sad7"></td>
+                <td><input type="radio" name="mood" value="Happy7"></td>
+                <td><input type="radio"name="mood" value="Calm7"checked></td>
+                <td><input type="radio"name="mood" value="Angry7"></td>
+                <td><input type="radio"name="mood" value="Productive7"></td>
+                <td><input type="radio"name="mood" value="Sad7"></td>
             </form>
               </tr>
 
@@ -283,7 +454,7 @@
            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#report2"><p style="padding-left: 80px; font-size: 20px;">Report</p></a></li>
         </ul>
     </div>
-    <div class="tab-content">
+    <div class="tab-content">   
         <div class="tab-pane container active"id="table2" >
             <br/>
             <table class="table table-hover">
@@ -324,22 +495,81 @@
                 </tr>
 
             </table>
+         
         </div>
         <div class="tab-pane container fade" id="report2">
             <div class="container mt-3">
                 <p>This is the progress bars representation of the habits:</p> 
-                <p style="font-size:20px;">Reading Qura'n</p>
+                <p>Reading Qura'n</p>
                 <div class="progress">
                   <div class="progress-bar bg-dark" style="width:28.5%"></div> </div><br>
-                  <p style="font-size:20px;">Praying on time</p>
+                  <p>Praying on time</p>
                   <div class="progress">
                   <div class="progress-bar bg-danger" style="width:42.8%"></div>
                   </div><br></div>
               
         </div>
-    </div>
-    <button type="button" class="btn btn-light"style="margin-left:60px; width:100px; height:100px;"><a href="Journaling.html"><p style="font-size: 20px;">Back</p></a></button>
 
-         
+       
+    </div>
+    <br/> <br/><br/>
+
+    <div style="text-align: center; margin-left: 120px;">
+         <!--table mantained from array fictionBooks1-->
+        <table>
+            <tr>
+                <th id="header1"></th>
+                <th id="header2"></th>
+                <th id="header3"></th>
+                
+            </tr>
+            <tr>
+                <td id="first row first cell"></td>
+                <td id="first row second cell"></td>
+                <td id="first row third cell"></td>
+            </tr>
+
+            <tr>
+                <td id="second row first cell"></td>
+                <td id="second row second cell"></td>
+                <td id="second row third cell"></td>
+            </tr>
+           
+        </table>
+        <br/>
+ <!--table mantained from array nonFictionBooks1-->
+        <table>
+            <tr>
+                <th id="Header1"></th>
+                <th id="Header2"></th>
+                <th id="Header3"></th>
+                
+            </tr>
+            <tr>
+                <td id="First row first cell"></td>
+                <td id="First row second cell"></td>
+                <td id="First row third cell"></td>
+            </tr>
+
+            <tr>
+                <td id="Second row first cell"></td>
+                <td id="Second row second cell"></td>
+                <td id="Second row third cell"></td>
+            </tr>
+           
+        </table>
+        <br/>
+        <form action="">
+            <label>Search :  <input type="text" name = 'book' id="searchengine" placeholder="Enter the data here"/></label>
+
+        </form>
+        <button  type="button" onclick="search()" class="btn btn-light"><p style="font-size: 20px;">Search</p></button></div><br/>
+
+        <button type="button" class="btn btn-light"style="margin-left:60px; width:100px; height:100px;"><a href="Journaling.html"><p style="font-size: 20px;">Back</p></a></button>
+
+    </div>
+<br/>
+
+
     </body>
 </html>
